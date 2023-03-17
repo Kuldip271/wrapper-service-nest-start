@@ -1,0 +1,56 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+input CreateTaskInput {
+  name: String!
+}
+
+input LoginUserInput {
+  email: String!
+  password: String!
+}
+
+type Mutation {
+  createTask(createTaskInput: CreateTaskInput!): ResponseTask!
+  login(loginUserInput: LoginUserInput!): Response!
+  removeTask(id: Int!): ResponseTask!
+  removeUser: Response!
+  signup(signupUserInput: SignupUserInput!): Response!
+  updateTask(updateTaskInput: UpdateTaskInput!): ResponseTask!
+}
+
+type Query {
+  findAllTask: [ResponseTask!]!
+  findOneTask(id: Int!): ResponseTask!
+}
+
+type Response {
+  access_token: String
+  user: User
+}
+
+type ResponseTask {
+  id: Int!
+  name: String!
+  userId: Int!
+}
+
+input SignupUserInput {
+  age: Int
+  email: String!
+  password: String!
+  username: String!
+}
+
+input UpdateTaskInput {
+  id: Int!
+  name: String!
+}
+
+type User {
+  access_token: String
+  age: Int!
+  email: String!
+  username: String!
+}
